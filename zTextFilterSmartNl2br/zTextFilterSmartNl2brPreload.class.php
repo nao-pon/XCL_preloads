@@ -1,5 +1,5 @@
 <?php
-if (class_exists('Hyp_TextFilter')) {
+if (XC_CLASS_EXISTS('Hyp_TextFilter')) {
 
 class TextFilterSmartNl2br extends Hyp_TextFilter {}
 
