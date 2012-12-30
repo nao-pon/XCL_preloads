@@ -41,10 +41,10 @@ class zTextFilterSmartNl2br extends TextFilterSmartNl2br
 		static $filter = array();
 		if ($html) {
 			if (! $filter) {
-				$filter['td_nl2br'] = create_function('$m', 'return $m[1].nl2br($m[2]).$m[3];');
+				$filter['td_nl2br'] = create_function('$m', 'return $m[1].nl2br($m[3]).$m[4];');
 				$filter['ignore_part'] = create_function('$m', 'return $m[1].preg_replace(\'/\r\n|[\r\n]/\', "\\x01" , $m[3]).$m[4];');
 			}
-			$text = preg_replace_callback('#(<td[^>]*>)(?:\r\n|[\r\n])?(.+?)(?:\r\n|[\r\n])?(</td>)#is', $filter['td_nl2br'], $text);
+			$text = preg_replace_callback('#(<(t[dh])[^>]*>)(?:\r\n|[\r\n])?(.+?)(?:\r\n|[\r\n])?(</\\2>)#is', $filter['td_nl2br'], $text);
 			$text = preg_replace_callback('#(?:\r\n|[\r\n])(<(table|script|object|style)[^>]*>)(.+?)(</\\2>)(?:\r\n|[\r\n])?#is', $filter['ignore_part'], $text);
 			return str_replace("\x01", "\n", nl2br($text));
 		}
