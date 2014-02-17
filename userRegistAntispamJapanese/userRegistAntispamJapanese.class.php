@@ -4,7 +4,7 @@ if (!defined('XOOPS_ROOT_PATH')) exit();
 
 class userRegistAntispamJapanese extends XCube_ActionFilter
 {
-	// Œ¾Œê’è”ƒI[ƒo[ƒ‰ƒCƒhƒVƒXƒeƒ€‚ğ—˜—p‚·‚éê‡‚É‚Í“KØ‚ÉƒfƒBƒŒƒNƒgƒŠ–¼‚ğw’è‚·‚é
+	// è¨€èªå®šæ•°ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã‚·ã‚¹ãƒ†ãƒ ã‚’åˆ©ç”¨ã™ã‚‹å ´åˆã«ã¯é©åˆ‡ã«ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªåã‚’æŒ‡å®šã™ã‚‹
 	private $mydirname = 'd3forum';
 	
 	function postFilter() {
